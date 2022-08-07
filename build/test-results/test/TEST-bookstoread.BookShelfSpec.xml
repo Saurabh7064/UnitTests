@@ -1,8 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<testsuite name="bookstoread.BookShelfSpec" tests="1" skipped="0" failures="0" errors="0" timestamp="2022-08-06T21:43:37" hostname="Saurabhs-MacBook-Air.local" time="0.063">
+<testsuite name="A bookshelf" tests="1" skipped="0" failures="0" errors="0" timestamp="2022-08-07T18:40:03" hostname="Saurabhs-MacBook-Air.local" time="0.059">
   <properties/>
-  <testcase name="shelfEmptyWhenNoBookAdded(TestInfo)" classname="bookstoread.BookShelfSpec" time="0.063"/>
-  <system-out><![CDATA[Working on test case shelfEmptyWhenNoBookAdded(TestInfo)
-]]></system-out>
+  <testcase name="nullAssertionTest()" classname="bookstoread.BookShelfSpec" time="0.059"/>
+  <system-out><![CDATA[]]></system-out>
   <system-err><![CDATA[]]></system-err>
 </testsuite>
