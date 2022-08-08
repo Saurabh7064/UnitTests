@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<testsuite name="A bookshelf" tests="1" skipped="0" failures="0" errors="0" timestamp="2022-08-07T18:40:03" hostname="Saurabhs-MacBook-Air.local" time="0.059">
+<testsuite name="A bookshelf" tests="1" skipped="0" failures="0" errors="0" timestamp="2022-08-07T18:44:43" hostname="Saurabhs-MacBook-Air.local" time="0.068">
   <properties/>
-  <testcase name="nullAssertionTest()" classname="bookstoread.BookShelfSpec" time="0.059"/>
+  <testcase name="shouldCheckForEvenNumbers()" classname="bookstoread.BookShelfSpec" time="0.068"/>
   <system-out><![CDATA[]]></system-out>
   <system-err><![CDATA[]]></system-err>
 </testsuite>
