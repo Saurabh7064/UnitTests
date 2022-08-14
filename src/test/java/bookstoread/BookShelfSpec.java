@@ -17,6 +17,7 @@ import static org.junit.jupiter.api.Assertions.*;
 public class BookShelfSpec {
     @Test
     @DisplayName("is empty when no book is added to it")
+    //negative test case
     void shelfEmptyWhenNoBookAdded(TestInfo testInfo) {
         System.out.println("Working on test case " + testInfo.getDisplayName());
         BookShelf shelf = new BookShelf();
@@ -29,6 +30,28 @@ public class BookShelfSpec {
         shelf.add("Effective Java","Code Complete");
          List<String> books = shelf.books();
         assertEquals(2, books.size(), () -> "BookShelf should have two books.");
+    }
+//    One last test case that we can add for this user story is to make sure that the client of
+//    BookShelf can’t modify the books collection returned by the books method.
+    @Test
+    void booksReturnedFromBookShelfIsImmutableForClient() {
+        BookShelf shelf = new BookShelf();
+        shelf.add("Effective Java", "Code Complete");
+        List<String> books = shelf.books();
+        try {
+            books.add("The Mythical Man-Month");
+            fail(() -> "Should not be able to add book to books");
+        } catch (Exception e) {
+            assertTrue(e instanceof UnsupportedOperationException, () -> "Should " +
+                    "throw UnsupportedOperationException.");
+        }
+    }
+    @Test
+    public void emptyBookShelfWhenAddIsCalledWithoutBooks() {
+        BookShelf shelf = new BookShelf();
+        shelf.add();
+        List<String> books = shelf.books();
+        assertTrue(books.isEmpty(), () -> "BookShelf should be empty.");
     }
 
     @Test
