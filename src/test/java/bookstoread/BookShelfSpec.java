@@ -1,9 +1,7 @@
 package bookstoread;
 
 import org.junit.Ignore;
-import org.junit.jupiter.api.DisplayName;
-import org.junit.jupiter.api.Test;
-import org.junit.jupiter.api.TestInfo;
+import org.junit.jupiter.api.*;
 
 import java.util.Arrays;
 import java.util.List;
@@ -15,27 +13,34 @@ import static org.junit.jupiter.api.Assertions.*;
 
 @DisplayName("A bookshelf")
 public class BookShelfSpec {
+    private BookShelf shelf;
+
+    @BeforeEach
+    void init() throws Exception {
+        shelf = new BookShelf();
+    }
+
+
     @Test
     @DisplayName("is empty when no book is added to it")
-    //negative test case
+        //negative test case
     void shelfEmptyWhenNoBookAdded(TestInfo testInfo) {
         System.out.println("Working on test case " + testInfo.getDisplayName());
-        BookShelf shelf = new BookShelf();
         List<String> books = shelf.books();
         assertTrue(books.isEmpty(), () -> "BookShelf should be empty.");
     }
+
     @Test
     void bookshelfContainsTwoBooksWhenTwoBooksAdded() {
-        BookShelf shelf = new BookShelf();
-        shelf.add("Effective Java","Code Complete");
-         List<String> books = shelf.books();
+        shelf.add("Effective Java", "Code Complete");
+        List<String> books = shelf.books();
         assertEquals(2, books.size(), () -> "BookShelf should have two books.");
     }
-//    One last test case that we can add for this user story is to make sure that the client of
+
+    //    One last test case that we can add for this user story is to make sure that the client of
 //    BookShelf can’t modify the books collection returned by the books method.
     @Test
     void booksReturnedFromBookShelfIsImmutableForClient() {
-        BookShelf shelf = new BookShelf();
         shelf.add("Effective Java", "Code Complete");
         List<String> books = shelf.books();
         try {
@@ -46,9 +51,9 @@ public class BookShelfSpec {
                     "throw UnsupportedOperationException.");
         }
     }
+
     @Test
     public void emptyBookShelfWhenAddIsCalledWithoutBooks() {
-        BookShelf shelf = new BookShelf();
         shelf.add();
         List<String> books = shelf.books();
         assertTrue(books.isEmpty(), () -> "BookShelf should be empty.");
@@ -79,8 +84,8 @@ public class BookShelfSpec {
     }
 
     @Test
+    @Disabled
     public void shelfToStringShouldPrintBookCountAndTitles() throws Exception {
-        BookShelf shelf = new BookShelf();
         List<String> books = shelf.books();
         books.add("The Phoenix Project");
         books.add("Java 8 in Action");
