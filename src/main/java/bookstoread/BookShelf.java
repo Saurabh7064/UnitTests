@@ -1,6 +1,7 @@
 package bookstoread;
 
 import java.util.ArrayList;
+import java.util.Arrays;
 import java.util.Collections;
 import java.util.List;
 
@@ -11,8 +12,10 @@ public class BookShelf {
         return bookList;
     }
 
-    public void add(String book){
-        bookList.add(book);
+    public void add(String... books){
+        Arrays.stream(books).forEach(book -> bookList.add(book));
+        //with lamda press option+enter to convert 
+        Arrays.stream(books).forEach(bookList::add);
     }
 
 
