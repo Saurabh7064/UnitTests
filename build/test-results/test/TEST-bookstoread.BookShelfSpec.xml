@@ -1,16 +1,14 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<testsuite name="A bookshelf" tests="7" skipped="1" failures="0" errors="0" timestamp="2022-08-14T21:20:16" hostname="Saurabhs-MacBook-Air.local" time="0.096">
+<testsuite name="A bookshelf" tests="6" skipped="1" failures="0" errors="0" timestamp="2022-12-11T05:05:24" hostname="Saurabhs-MacBook-Air-2.local" time="0.083">
   <properties/>
-  <testcase name="booksReturnedFromBookShelfIsImmutableForClient()" classname="bookstoread.BookShelfSpec" time="0.058"/>
-  <testcase name="bookshelfContainsTwoBooksWhenTwoBooksAdded()" classname="bookstoread.BookShelfSpec" time="0.005"/>
-  <testcase name="nullAssertionTest()" classname="bookstoread.BookShelfSpec" time="0.001"/>
-  <testcase name="shelfToStringShouldPrintBookCountAndTitles()" classname="bookstoread.BookShelfSpec" time="0.001">
+  <testcase name="booksReturnedFromBookShelfIsImmutableForClient()" classname="bookstoread.BookShelfSpec" time="0.064"/>
+  <testcase name="bookshelfArrangedByBookTitle()" classname="bookstoread.BookShelfSpec" time="0.004"/>
+  <testcase name="bookshelfContainsTwoBooksWhenTwoBooksAdded()" classname="bookstoread.BookShelfSpec" time="0.002"/>
+  <testcase name="shelfEmptyWhenNoBookAdded()" classname="bookstoread.BookShelfSpec" time="0.001">
     <skipped/>
   </testcase>
-  <testcase name="is empty when no book is added to it" classname="bookstoread.BookShelfSpec" time="0.005"/>
-  <testcase name="shouldCheckForEvenNumbers()" classname="bookstoread.BookShelfSpec" time="0.012"/>
-  <testcase name="emptyBookShelfWhenAddIsCalledWithoutBooks()" classname="bookstoread.BookShelfSpec" time="0.001"/>
-  <system-out><![CDATA[Working on test case is empty when no book is added to it
-]]></system-out>
+  <testcase name="booksInBookShelfAreInInsertionOrderAfterCallingArrange()" classname="bookstoread.BookShelfSpec" time="0.003"/>
+  <testcase name="emptyBookShelfWhenAddIsCalledWithoutBooks()" classname="bookstoread.BookShelfSpec" time="0.002"/>
+  <system-out><![CDATA[]]></system-out>
   <system-err><![CDATA[]]></system-err>
 </testsuite>

@@ -1,23 +1,26 @@
 package bookstoread;
 
-import java.util.ArrayList;
-import java.util.Arrays;
-import java.util.Collections;
-import java.util.List;
+import java.util.*;
+import java.util.stream.Collectors;
 
 public class BookShelf {
-    private List<String> books = new ArrayList<>();
+    private List<Book> books = new ArrayList<>();
 
-    public List<String> books() {
+    public List<Book> books() {
         return Collections.unmodifiableList(books);
     }
 
-    public void add(String... booksToBeAdded){
+    public void add(Book... booksToBeAdded){
         Arrays.stream(booksToBeAdded).forEach(book -> books.add(book));
         //with lamda press option+enter to convert 
         //Arrays.stream(booksToBeAdded).forEach(books::add);
     }
 
 
-
+    public List<Book> arrange() {
+        return books.stream().sorted().collect(Collectors.toList());
+        //below one will sort the original
+//        books.sort(Comparator.naturalOrder());
+//        return books;
+    }
 }
