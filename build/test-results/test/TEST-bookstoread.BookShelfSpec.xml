@@ -1,14 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<testsuite name="A bookshelf" tests="6" skipped="1" failures="0" errors="0" timestamp="2022-12-11T05:05:24" hostname="Saurabhs-MacBook-Air-2.local" time="0.083">
+<testsuite name="A bookshelf" tests="1" skipped="0" failures="0" errors="0" timestamp="2022-12-12T06:18:08" hostname="Saurabhs-Air-2.dhost.uta.edu" time="0.079">
   <properties/>
-  <testcase name="booksReturnedFromBookShelfIsImmutableForClient()" classname="bookstoread.BookShelfSpec" time="0.064"/>
-  <testcase name="bookshelfArrangedByBookTitle()" classname="bookstoread.BookShelfSpec" time="0.004"/>
-  <testcase name="bookshelfContainsTwoBooksWhenTwoBooksAdded()" classname="bookstoread.BookShelfSpec" time="0.002"/>
-  <testcase name="shelfEmptyWhenNoBookAdded()" classname="bookstoread.BookShelfSpec" time="0.001">
-    <skipped/>
-  </testcase>
-  <testcase name="booksInBookShelfAreInInsertionOrderAfterCallingArrange()" classname="bookstoread.BookShelfSpec" time="0.003"/>
-  <testcase name="emptyBookShelfWhenAddIsCalledWithoutBooks()" classname="bookstoread.BookShelfSpec" time="0.002"/>
+  <testcase name="books inside bookshelf are grouped by publication year" classname="bookstoread.BookShelfSpec" time="0.079"/>
   <system-out><![CDATA[]]></system-out>
   <system-err><![CDATA[]]></system-err>
 </testsuite>
