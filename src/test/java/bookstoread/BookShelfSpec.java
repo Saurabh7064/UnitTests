@@ -103,7 +103,9 @@ public class BookShelfSpec {
         @Test
         void bookshelfArrangedByUserProvidedCriteria() {
             shelf.add(effectiveJava, codeComplete, mythicalManMonth);
-            List<Book> books = shelf.arrange(Comparator.<Book>naturalOrder().reversed());
+            //List<Book> books = shelf.arrange(); it will fail because of the order
+            Comparator<Book> reversed = Comparator.<Book>naturalOrder().reversed();
+            List<Book> books = shelf.arrange(reversed);
             assertEquals(Arrays.asList(mythicalManMonth, effectiveJava, codeComplete),
                     books, () -> "Books in a bookshelf are arranged in descending order of book title");
         }
