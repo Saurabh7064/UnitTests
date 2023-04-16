@@ -3,6 +3,7 @@ package bookstoread;
 import java.time.Year;
 import java.util.*;
 import java.util.function.Function;
+import java.util.function.Predicate;
 import java.util.stream.Collectors;
 
 import static java.util.stream.Collectors.groupingBy;
@@ -59,5 +60,15 @@ public class BookShelf {
         int percentageCompleted = booksRead * 100 / books.size();
         int percentageToRead = booksToRead * 100 / books.size();
         return new Progress(percentageCompleted, percentageToRead, 0);
+    }
+
+    public List<Book> findBooksByTitle(String title) {
+        return findBooksByTitle(title, b -> true);
+    }
+    public List<Book> findBooksByTitle(String title, Predicate<Book> filter) {
+        return books.stream()
+                .filter(b -> b.getTitle().toLowerCase().contains(title))
+                .filter(filter)
+                .collect(Collectors.toList());
     }
 }
