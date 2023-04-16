@@ -38,5 +38,21 @@ class BookFilterSpec {
             compositeFilter.addFilter( b -> false);
             assertFalse(compositeFilter.apply(cleanCode));
         }
+        @Test
+        @DisplayName("Composite criteria does not invoke after first failure")
+        void shouldNotInvokeAfterFirstFailure(){
+            CompositeFilter compositeFilter = new CompositeFilter();
+            compositeFilter.addFilter( b -> false);
+            compositeFilter.addFilter( b -> true);
+            assertFalse(compositeFilter.apply(cleanCode));
+        }
+        @Test
+        @DisplayName("Composite criteria invokes all filters")
+        void shouldInvokeAllFilters(){
+            CompositeFilter compositeFilter = new CompositeFilter();
+            compositeFilter.addFilter( b -> true);
+            compositeFilter.addFilter( b -> true);
+            assertTrue(compositeFilter.apply(cleanCode));
+        }
     }
 }
