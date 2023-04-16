@@ -65,10 +65,16 @@ public class BookShelf {
     public List<Book> findBooksByTitle(String title) {
         return findBooksByTitle(title, b -> true);
     }
-    public List<Book> findBooksByTitle(String title, Predicate<Book> filter) {
+//    public List<Book> findBooksByTitle(String title, Predicate<Book> filter) {
+//        return books.stream()
+//                .filter(b -> b.getTitle().toLowerCase().contains(title))
+//                .filter(filter)
+//                .collect(Collectors.toList());
+//    }
+    public List<Book> findBooksByTitle(String title, BookFilter filter) {
         return books.stream()
                 .filter(b -> b.getTitle().toLowerCase().contains(title))
-                .filter(filter)
+                .filter(b -> filter.apply(b))
                 .collect(Collectors.toList());
     }
 }
